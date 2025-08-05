@@ -1,0 +1,9 @@
+---
+title: "eds212-day2-tasks"
+author: "Isabella Segarra"
+format: html
+editor: visual
+---
+
+library(tidyverse)
+library(palmerpenguins)
