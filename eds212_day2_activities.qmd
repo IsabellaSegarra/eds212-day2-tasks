@@ -4,6 +4,45 @@ author: "Isabella Segarra"
 format: html
 editor: visual
 ---
-
+```{r}
 library(tidyverse)
 library(palmerpenguins)
+library (ggplot2)
+```
+
+```{r}
+usethis::use_git()
+usethis::use_github()
+```
+
+```{r}
+fx_dx <- D(expr = expression(x^2), name = "x")
+fx_dx
+
+x <- 3
+
+eval(fx_dx)
+
+```
+
+```{r}
+Pa_dx <- D(expr = expression(2*(3*a + 2)^4 - 5), name = "x")
+Pa_dx 
+
+x<-1.2
+
+eval(Pa_dx)
+```
+```{r}
+ggplot(data = penguins, aes(x = bill_len, y = bill_dep))+
+  geom_point(aes(color = species)) 
+```
+```{r}
+geom_jitter(data = penguins, aes(x = species, y = flipper_len))+
+   labs(x = "Body mass(g)", 
+       y = "Flipper Length (mm)",
+       title = "Palmer penguins size measurements", 
+       subtitle = "Palmer archipelago, Antartica (2007 -2009)",
+       caption = "Collected by Dr. Kristen Gorman")
+```
+
