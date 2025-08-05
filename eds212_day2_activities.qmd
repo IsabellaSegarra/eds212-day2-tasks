@@ -4,6 +4,9 @@ author: "Isabella Segarra"
 format: html
 editor: visual
 ---
+
+# Deritatives and Penguin Plots
+
 ```{r}
 library(tidyverse)
 library(palmerpenguins)
@@ -14,6 +17,8 @@ library (ggplot2)
 usethis::use_git()
 usethis::use_github()
 ```
+
+## Derivatives
 
 ```{r}
 fx_dx <- D(expr = expression(x^2), name = "x")
@@ -33,16 +38,31 @@ x<-1.2
 
 eval(Pa_dx)
 ```
+
+## Penguin Plots
+
 ```{r}
 ggplot(data = penguins, aes(x = bill_len, y = bill_dep))+
   geom_point(aes(color = species)) 
 ```
+
 ```{r}
 geom_jitter(data = penguins, aes(x = species, y = flipper_len))+
-   labs(x = "Body mass(g)", 
+   labs(x = "species", 
        y = "Flipper Length (mm)",
-       title = "Palmer penguins size measurements", 
+       title = "Palmer Penguins Flipper Length", 
        subtitle = "Palmer archipelago, Antartica (2007 -2009)",
        caption = "Collected by Dr. Kristen Gorman")
 ```
 
+```{r}
+library(ggplot2)
+ggplot(data = penguins, aes(x = species, y = flipper_len))+
+  geom_jitter(aes(color = species))+
+   labs(x = "species", 
+       y = "Flipper Length (mm)",
+       title = "Palmer Penguins Flipper Length", 
+       subtitle = "Palmer archipelago, Antartica (2007 -2009)",
+       caption = "Collected by Dr. Kristen Gorman")
+```
+```
